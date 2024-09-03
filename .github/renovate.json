@@ -7,9 +7,6 @@
     "ignoreDeps": [
         "tektronix/python-package-ci-cd"
     ],
-    "ignorePaths": [
-        "**/requirements.txt"
-    ],
     "packageRules": [
         {
             "addLabels": [
@@ -62,10 +59,12 @@
                 "*"
             ],
             "matchFileNames": [
-                "pyproject.toml"
+                "pyproject.toml",
+                "**/requirements.txt"
             ],
             "matchManagers": [
-                "poetry"
+                "poetry",
+                "pip_requirements"
             ],
             "matchPackageNames": [
                 "*"
