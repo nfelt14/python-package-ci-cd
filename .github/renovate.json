@@ -15,7 +15,7 @@
                 "dependencies"
             ],
             "additionalBranchPrefix": "docker-deps/",
-            "commitMessageSuffix": " for all dependant actions",
+            "commitMessageSuffix": " in all dependant actions",
             "description": "Add docker and dependencies labels to Docker dependency updates",
             "matchManagers": [
                 "dockerfile"
