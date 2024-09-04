@@ -53,37 +53,6 @@
             ]
         },
         {
-            "description": "Group minor and patch updates not defined in the pyproject.toml file for each requirements.txt file by directory",
-            "groupName": "{{{replace '/' '_' packageFileDir}}} requirements",
-            "matchFileNames": [
-                "**/requirements.txt"
-            ],
-            "matchManagers": [
-                "pip_requirements"
-            ],
-            "matchPackageNames": [
-                "!poetry-core",
-                "!poetry-plugin-export",
-                "!pre-commit",
-                "!pypi-simple",
-                "!pyright",
-                "!toml-sort",
-                "!tomli",
-                "!tomli-w",
-                "!yamlfix",
-                "*"
-            ],
-            "matchUpdateTypes": [
-                "minor",
-                "patch"
-            ]
-        },
-        {
-            "commitMessageSuffix": " for the {{depTypes}} group(s)",
-            "description": "Add commit suffix for the dependency group in pyproject.toml",
-            "matchDepTypes": [
-                "*"
-            ],
             "matchFileNames": [
                 "pyproject.toml",
                 "**/requirements.txt"
