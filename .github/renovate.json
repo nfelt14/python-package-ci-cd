@@ -62,7 +62,8 @@
                 "pip_requirements"
             ],
             "matchPackageNames": [
-                "*"
+                "*",
+                "!pypi-simple"
             ],
             "matchUpdateTypes": [
                 "minor",
@@ -70,7 +71,6 @@
             ]
         },
         {
-            "additionalBranchPrefix": "",
             "commitMessageSuffix": " for the {{depTypes}} group(s)",
             "description": "Add commit suffix for the dependency group in pyproject.toml",
             "matchDepTypes": [
