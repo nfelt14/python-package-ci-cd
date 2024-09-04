@@ -53,6 +53,24 @@
             ]
         },
         {
+            "description": "Group minor and patch updates for requirements.txt files by directory",
+            "groupName": "{{{replace '/' '_' packageFileDir}}} requirements",
+            "matchCurrentVersion": "!/^0/",
+            "matchFileNames": [
+                "**/requirements.txt"
+            ],
+            "matchManagers": [
+                "pip_requirements"
+            ],
+            "matchPackageNames": [
+                "*"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ]
+        },
+        {
             "commitMessageSuffix": " for the {{depTypes}} group(s)",
             "description": "Add commit suffix for the dependency group in pyproject.toml",
             "matchDepTypes": [
