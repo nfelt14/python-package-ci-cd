@@ -58,7 +58,7 @@
             ]
         },
         {
-            "commitMessageSuffix": "{{#if depNameSanitized}} in dev workflows{{/if}}",
+            "commitMessageSuffix": "{{#unless (equals depNameSanitized '')}} in dev workflows{{/unless}} {{depNameSanitized}}",
             "description": "Group together all dev workflow dependency updates",
             "groupName": "dev workflow dependencies",
             "matchFileNames": [
