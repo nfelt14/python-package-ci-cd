@@ -61,7 +61,7 @@
             ]
         },
         {
-            "commitMessageSuffix": "{{#if (depTypes)}} for {{depTypes}}{{else}} for {{parentDir}}{{/if}}",
+            "commitMessageSuffix": "{{#if (equals depTypes '')}} for {{parentDir}}{{else}} for {{depTypes}}{{/if}}",
             "description": "Add commit suffix for the dependency group in pyproject.toml",
             "matchFileNames": [
                 "pyproject.toml",
