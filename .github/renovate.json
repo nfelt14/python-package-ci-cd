@@ -9,6 +9,43 @@
     ],
     "packageRules": [
         {
+            "addLabels": [
+                "docker",
+                "dependencies"
+            ],
+            "additionalBranchPrefix": "docker-deps/",
+            "description": "Add docker and dependencies labels to Docker dependency updates",
+            "matchManagers": [
+                "dockerfile"
+            ],
+            "semanticCommitScope": "docker-deps"
+        },
+        {
+            "addLabels": [
+                "gh-actions",
+                "dependencies"
+            ],
+            "additionalBranchPrefix": "gh-actions-deps/",
+            "description": "Add gh-actions and dependencies labels to GitHub Action dependency updates",
+            "matchManagers": [
+                "github-actions"
+            ],
+            "semanticCommitScope": "gh-actions-deps"
+        },
+        {
+            "addLabels": [
+                "python",
+                "dependencies"
+            ],
+            "additionalBranchPrefix": "python-deps/",
+            "description": "Add python and dependencies labels to Python dependency updates",
+            "matchManagers": [
+                "poetry",
+                "pip_requirements"
+            ],
+            "semanticCommitScope": "python-deps"
+        },
+        {
             "description": "Group together all python-semantic-release dependencies",
             "groupName": "python-semantic-release dependencies",
             "matchPackageNames": [
@@ -16,7 +53,6 @@
             ]
         },
         {
-            "additionalBranchPrefix": "",
             "description": "Group minor and patch updates not defined in the pyproject.toml file for each requirements.txt file by directory",
             "groupName": "{{{replace '/' '_' packageFileDir}}} requirements",
             "matchFileNames": [
@@ -26,7 +62,8 @@
                 "pip_requirements"
             ],
             "matchPackageNames": [
-                "*"
+                "*",
+                "!pypi-simple"
             ],
             "matchUpdateTypes": [
                 "minor",
@@ -34,7 +71,6 @@
             ]
         },
         {
-            "additionalBranchPrefix": "",
             "commitMessageSuffix": " for the {{depTypes}} group(s)",
             "description": "Add commit suffix for the dependency group in pyproject.toml",
             "matchDepTypes": [
@@ -50,11 +86,6 @@
             ],
             "matchPackageNames": [
                 "*"
-            ],
-            "matchUpdateTypes": [
-                "minor",
-                "patch",
-                "major"
             ]
         }
     ],
