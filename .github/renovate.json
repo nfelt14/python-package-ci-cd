@@ -52,6 +52,9 @@
             "description": "Add commit suffix for reusable workflows",
             "matchManagers": [
                 "github-actions"
+            ],
+            "matchPackageNames": [
+                "/_reusable-.*\\.ya?ml/"
             ]
         },
         {
