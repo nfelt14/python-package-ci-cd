@@ -62,8 +62,16 @@
                 "pip_requirements"
             ],
             "matchPackageNames": [
-                "*",
-                "!pypi-simple"
+                "!poetry-core",
+                "!poetry-plugin-export",
+                "!pre-commit",
+                "!pypi-simple",
+                "!pyright",
+                "!toml-sort",
+                "!tomli",
+                "!tomli-w",
+                "!yamlfix",
+                "*"
             ],
             "matchUpdateTypes": [
                 "minor",
