@@ -218,9 +218,8 @@ setenv =
     GITHUB_STEP_SUMMARY = {tox_root}/.results_{envname}/github_report.md
 
 [testenv:docs]
-deps =
-    -r doc_config/requirements.txt
 commands_pre =
+    poetry install --only docs
 commands =
     python -c "import shutil; shutil.rmtree('.results_{envname}', ignore_errors=True)"
     mkdocs --verbose build --site-dir .results_{envname}

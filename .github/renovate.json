@@ -46,6 +46,14 @@
             "semanticCommitScope": "python-deps"
         },
         {
+            "automerge": true,
+            "description": "Automatically merge all patch updates",
+            "matchUpdateTypes": [
+                "patch"
+            ]
+        },
+        {
+            "automerge": false,
             "description": "Group together all python-semantic-release dependencies",
             "groupName": "python-semantic-release dependencies",
             "matchPackageNames": [
