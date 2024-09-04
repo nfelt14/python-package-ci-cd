@@ -28,7 +28,7 @@
                 "dependencies"
             ],
             "additionalBranchPrefix": "gh-actions-deps/",
-            "commitMessageSuffix": " {{upgrades}}",
+            "commitMessageSuffix": " {{{ toJSON upgrades }}}",
             "description": "Add gh-actions and dependencies labels to GitHub Action dependency updates",
             "matchManagers": [
                 "github-actions"
