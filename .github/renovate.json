@@ -16,6 +16,7 @@
             ]
         },
         {
+            "additionalBranchPrefix": "",
             "description": "Group minor and patch updates not defined in the pyproject.toml file for each requirements.txt file by directory",
             "groupName": "{{{replace '/' '_' packageFileDir}}} requirements",
             "matchFileNames": [
@@ -33,6 +34,7 @@
             ]
         },
         {
+            "additionalBranchPrefix": "",
             "commitMessageSuffix": " for the {{depTypes}} group(s)",
             "description": "Add commit suffix for the dependency group in pyproject.toml",
             "matchDepTypes": [
