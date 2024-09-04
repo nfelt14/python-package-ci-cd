@@ -228,3 +228,6 @@ commands =
 commands =
     pytest -v -k "test_docs" --showlocals --junitxml={tox_root}/.results_{envname}/results.xml --self-contained-html --html={tox_root}/.results_{envname}/results.html
 """
+
+[tool.yamlfix]
+comments_min_spaces_from_content = 1
