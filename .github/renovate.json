@@ -50,21 +50,21 @@
         {
             "commitMessageSuffix": " in all dependant reusable workflows",
             "description": "Add commit suffix for reusable workflows",
+            "matchFileNames": [
+                "/_reusable-.*\\.ya?ml/"
+            ],
             "matchManagers": [
                 "github-actions"
-            ],
-            "matchPackageNames": [
-                "/_reusable-.*\\.ya?ml/"
             ]
         },
         {
             "description": "Group together all dev workflow dependency updates",
             "groupName": "dev workflow dependencies",
+            "matchFileNames": [
+                "!/_reusable-.*\\.ya?ml/"
+            ],
             "matchManagers": [
                 "github-actions"
-            ],
-            "matchPackageNames": [
-                "!/_reusable-.*\\.ya?ml/"
             ]
         },
         {
