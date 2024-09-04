@@ -28,7 +28,6 @@
                 "dependencies"
             ],
             "additionalBranchPrefix": "gh-actions-deps/",
-            "commitMessageSuffix": " in all dev workflows",
             "description": "Add gh-actions and dependencies labels to GitHub Action dependency updates",
             "matchManagers": [
                 "github-actions"
@@ -47,6 +46,13 @@
                 "pip_requirements"
             ],
             "semanticCommitScope": "python-deps"
+        },
+        {
+            "commitMessageSuffix": " in all dev workflows",
+            "description": "Update commit message for GitHub Actions used in dev Workflows",
+            "matchFileNames": [
+                "!/^.*/_reusable-.*.ya?ml$/"
+            ]
         },
         {
             "commitMessageSuffix": " in all dependant reusable workflows",
