@@ -36,22 +36,22 @@ jobs:
           fail-build: true
           severity-cutoff: low
       - name: Scan SBOM (print results to console)
+        if: ${{ always() && contains(fromJSON('["success", "failure"]'), steps.scan.outcome) }}
         uses: anchore/scan-action@64a33b277ea7a1215a3c142735a1091341939ff5  # v4.1.2
-        id: scan-table-output
         with:
           output-format: table
           sbom: ${{ github.event.repository.name }}-sbom.spdx.json
           fail-build: false
           severity-cutoff: low
       - name: Upload SBOM scan SARIF report as a workflow artifact
-        if: ${{ contains(fromJSON('["success", "failure"]'), steps.scan.outcome) }}
+        if: ${{ always() && contains(fromJSON('["success", "failure"]'), steps.scan.outcome) }}
         uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874  # v4.4.0
         with:
           name: sarif_artifact
           path: ${{ steps.scan.outputs.sarif }}
           if-no-files-found: error
       - name: Upload SBOM scan SARIF report to GitHub UI Security tab
-        if: ${{ github.event_name != 'pull_request' && contains(fromJSON('["success", "failure"]'), steps.scan.outcome) }}
+        if: ${{ always() && github.event_name != 'pull_request' && contains(fromJSON('["success", "failure"]'), steps.scan.outcome) }}
         uses: github/codeql-action/upload-sarif@4dd16135b69a43b6c8efb853346f8437d92d3c93  # v3.26.6
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
