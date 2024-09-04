@@ -58,7 +58,7 @@
             ]
         },
         {
-            "commitMessageSuffix": "{{#if isGroup}} in dev workflows{{/if}}",
+            "commitMessageSuffix": "{{#unless isGroup}} in dev workflows{{/unless}}",
             "description": "Group together all dev workflow dependency updates",
             "groupName": "dev workflow dependencies",
             "matchFileNames": [
