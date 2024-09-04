@@ -15,7 +15,7 @@
                 "dependencies"
             ],
             "additionalBranchPrefix": "docker-deps/",
-            "commitMessageSuffix": " for {{packageFileDir}}",
+            "commitMessageSuffix": " for all dependant actions",
             "description": "Add docker and dependencies labels to Docker dependency updates",
             "matchManagers": [
                 "dockerfile"
@@ -48,6 +48,13 @@
             "semanticCommitScope": "python-deps"
         },
         {
+            "commitMessageSuffix": " in all dependant reusable workflows",
+            "description": "Update commit message for GitHub Actions used in Reusable Workflows",
+            "matchFileNames": [
+                "/^.*/_reusable-.*.ya?ml$/"
+            ]
+        },
+        {
             "automerge": true,
             "description": "Automatically merge all patch updates",
             "matchUpdateTypes": [
@@ -63,7 +70,7 @@
             ]
         },
         {
-            "commitMessageSuffix": "{{#if (equals parentDir '')}} for {{#each depTypes}}{{replace '-' '/' this}}{{#unless @last}} and {{/unless}}{{/each}}{{else}} for {{packageFileDir}}{{/if}}",
+            "commitMessageSuffix": "{{#if (equals parentDir '')}} for {{#each depTypes}}{{replace '-' '/' this}}{{#unless @last}} and {{/unless}}{{/each}}{{else}} for all dependant actions {{/if}}",
             "description": "Add commit suffix for the dependency group (or parent directory)",
             "matchFileNames": [
                 "pyproject.toml",
