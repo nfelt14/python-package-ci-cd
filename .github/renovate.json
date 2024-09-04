@@ -61,7 +61,7 @@
             ]
         },
         {
-            "commitMessageSuffix": "{{#if (equals parentDir '')}} for {{#each depTypes}}{{replace '-' '/' this}},{{/each}}{{else}} for {{packageFileDir}}{{/if}}",
+            "commitMessageSuffix": "{{#if (equals parentDir '')}} for {{{replace ',$' '' {{#each depTypes}}{{replace '-' '/' this}},{{/each}}}}}{{else}} for {{packageFileDir}}{{/if}}",
             "description": "Add commit suffix for the dependency group (or parent directory)",
             "matchFileNames": [
                 "pyproject.toml",
