@@ -2,7 +2,8 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "dependencyDashboard": true,
     "extends": [
-        "config:best-practices"
+        "config:best-practices",
+        "group:githubArtifactActions"
     ],
     "ignoreDeps": [
         "tektronix/python-package-ci-cd"
