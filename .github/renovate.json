@@ -11,7 +11,7 @@
     ],
     "packageRules": [
         {
-            "additionalBranchPrefix": "{{#if (equals manager 'github-actions')}}gh-actions{{else}}{{categories}}{{/if}}-deps/{{updateType}}/",
+            "additionalBranchPrefix": "{{#if (equals manager 'github-actions')}}gh-actions{{else}}{{categories}}{{/if}}-deps/",
             "description": "Set the branch prefix for all updates",
             "matchPackageNames": [
                 "*"
@@ -74,6 +74,7 @@
             ]
         },
         {
+            "additionalBranchPrefix": "automerge/",
             "automerge": true,
             "description": "Automatically merge all patch updates",
             "matchUpdateTypes": [
@@ -81,6 +82,7 @@
             ]
         },
         {
+            "additionalBranchPrefix": "automerge/",
             "automerge": true,
             "description": "Allow automatically merging minor updates of certain packages",
             "matchPackageNames": [
