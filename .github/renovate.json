@@ -11,11 +11,17 @@
     ],
     "packageRules": [
         {
+            "additionalBranchPrefix": "{{#if (equals manager 'github-actions')}}gh-actions{{else}}{{categories}}{{/if}}-deps/{{updateType}}/",
+            "description": "Set the branch prefix for all updates",
+            "matchPackageNames": [
+                "*"
+            ]
+        },
+        {
             "addLabels": [
                 "docker",
                 "dependencies"
             ],
-            "additionalBranchPrefix": "docker-deps/{{updateType}}/",
             "commitMessageSuffix": " in all dependant actions",
             "description": "Add docker and dependencies labels to Docker dependency updates",
             "matchManagers": [
@@ -28,7 +34,6 @@
                 "gh-actions",
                 "dependencies"
             ],
-            "additionalBranchPrefix": "gh-actions-deps/{{updateType}}/",
             "description": "Add gh-actions and dependencies labels to GitHub Action dependency updates",
             "matchManagers": [
                 "github-actions"
@@ -40,7 +45,6 @@
                 "python",
                 "dependencies"
             ],
-            "additionalBranchPrefix": "python-deps/{{updateType}}/",
             "description": "Add python and dependencies labels to Python dependency updates",
             "matchManagers": [
                 "poetry",
