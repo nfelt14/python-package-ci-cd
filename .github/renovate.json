@@ -15,7 +15,7 @@
                 "docker",
                 "dependencies"
             ],
-            "additionalBranchPrefix": "docker-deps/",
+            "additionalBranchPrefix": "docker-deps/{{updateType}}/",
             "commitMessageSuffix": " in all dependant actions",
             "description": "Add docker and dependencies labels to Docker dependency updates",
             "matchManagers": [
@@ -28,7 +28,7 @@
                 "gh-actions",
                 "dependencies"
             ],
-            "additionalBranchPrefix": "gh-actions-deps/",
+            "additionalBranchPrefix": "gh-actions-deps/{{updateType}}/",
             "description": "Add gh-actions and dependencies labels to GitHub Action dependency updates",
             "matchManagers": [
                 "github-actions"
@@ -40,7 +40,7 @@
                 "python",
                 "dependencies"
             ],
-            "additionalBranchPrefix": "python-deps/",
+            "additionalBranchPrefix": "python-deps/{{updateType}}/",
             "description": "Add python and dependencies labels to Python dependency updates",
             "matchManagers": [
                 "poetry",
@@ -78,7 +78,7 @@
         },
         {
             "automerge": true,
-            "description": "Allow automerge for minor updates of certain packages",
+            "description": "Allow automatically merging minor updates of certain packages",
             "matchPackageNames": [
                 "certifi"
             ],
