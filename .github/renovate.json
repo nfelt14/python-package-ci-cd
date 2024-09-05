@@ -100,6 +100,7 @@
             ]
         },
         {
+            "additionalBranchPrefix": "{{#if (equals manager 'github-actions')}}gh-actions{{else}}{{categories}}{{/if}}-deps/",
             "automerge": false,
             "description": "Group together all python-semantic-release dependencies",
             "groupName": "python-semantic-release dependencies",
