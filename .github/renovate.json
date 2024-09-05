@@ -77,9 +77,13 @@
             ]
         },
         {
+            "automerge": true,
             "description": "Allow automerge for minor updates of certain packages",
             "matchPackageNames": [
                 "certifi"
+            ],
+            "matchUpdateTypes": [
+                "minor"
             ]
         },
         {
