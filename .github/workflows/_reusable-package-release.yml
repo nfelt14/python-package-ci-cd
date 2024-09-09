@@ -120,7 +120,7 @@ jobs:
   bump-version:
     name: Update package version
     needs: [print-inputs]
-    if: github.repository == inputs.repo-name && github.ref == 'refs/heads/main'
+#    if: github.repository == inputs.repo-name && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: package-release-gate
     continue-on-error: true
@@ -165,9 +165,10 @@ jobs:
   pypi-build:
     name: Build package
     needs: [print-inputs, bump-version]
-    if: inputs.build-and-publish-python-package && github.repository == inputs.repo-name
-      && github.ref == 'refs/heads/main' && needs.bump-version.outputs.approved ==
-      'true'
+    if: needs.bump-version.outputs.approved == 'true'
+#    if: inputs.build-and-publish-python-package && github.repository == inputs.repo-name
+#      && github.ref == 'refs/heads/main' && needs.bump-version.outputs.approved ==
+#      'true'
     runs-on: ubuntu-latest
     permissions:
       id-token: write
