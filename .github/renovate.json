@@ -59,6 +59,8 @@
                 "pre-commit",
                 "dependencies"
             ],
+            "additionalBranchPrefix": "automerge/",
+            "automerge": true,
             "description": "Add pre-commit and dependencies labels to pre-commit dependency updates",
             "matchManagers": [
                 "pre-commit"
@@ -102,8 +104,7 @@
             "matchPackageNames": [
                 "certifi",
                 "trove-classifiers",
-                "idna",
-                "renovatebot/pre-commit-hooks"
+                "idna"
             ],
             "matchUpdateTypes": [
                 "minor"
