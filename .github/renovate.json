@@ -7,11 +7,16 @@
         ":separatePatchReleases"
     ],
     "ignoreDeps": [
-        "tektronix/python-package-ci-cd",
-        "*",
-        "!python"
+        "tektronix/python-package-ci-cd"
     ],
     "packageRules": [
+        {
+            "enabled": false,
+            "matchDepNames": [
+                "*",
+                "!python"
+            ]
+        },
         {
             "additionalBranchPrefix": "python-version/",
             "commitMessageSuffix": " in all dependant actions",
