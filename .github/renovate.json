@@ -11,6 +11,12 @@
     ],
     "packageRules": [
         {
+            "matchDatasources": [
+                "docker"
+            ],
+            "pinDigests": false
+        },
+        {
             "enabled": false,
             "matchDepNames": [
                 "*",
