@@ -142,8 +142,9 @@
             "matchDepNames": [
                 "python"
             ],
-            "matchDepTypes": [
-                "*"
+            "matchManagers": [
+                "dockerfile",
+                "poetry"
             ],
             "semanticCommitScope": "python-version"
         }
