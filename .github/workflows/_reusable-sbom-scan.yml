@@ -11,8 +11,8 @@ jobs:
   create-and-scan-sbom:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
-      - uses: actions/setup-python@39cd14951b08e74b54015e9e001cdefcf80e669f  # v5.1.1
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
         with:
           python-version-file: pyproject.toml
       - name: Create lockfile and install dependencies
@@ -20,16 +20,16 @@ jobs:
           pip install poetry
           poetry install
       - name: Create SBOM
-        uses: anchore/sbom-action@8d0a6505bf28ced3e85154d13dc6af83299e13f1 # v0.17.4
+        uses: anchore/sbom-action@fc46e51fd3cb168ffb36c6d1915723c47db58abb # v0.17.7
         with:
           format: spdx-json
           output-file: ${{ github.event.repository.name }}-sbom.spdx.json
-      - uses: actions/attest-build-provenance@1c608d11d69870c2092266b3f9a6f3abbf17002c # v1.4.3
+      - uses: actions/attest-build-provenance@ef244123eb79f2f7a7e75d99086184180e6d0018 # v1.4.4
         if: ${{ !(github.event.pull_request.head.repo.fork || github.event.workflow_call.pull_request.head.repo.fork) && !contains(fromJSON('["dependabot[bot]", "renovate[bot]"]'), github.actor) }}
         with:
           subject-path: ${{ github.event.repository.name }}-sbom.spdx.json
       - name: Scan SBOM
-        uses: anchore/scan-action@64a33b277ea7a1215a3c142735a1091341939ff5  # v4.1.2
+        uses: anchore/scan-action@f2ba85e044c8f5e5014c9a539328a9c78d3bfa49 # v5.2.1
         id: scan
         with:
           sbom: ${{ github.event.repository.name }}-sbom.spdx.json
@@ -37,7 +37,7 @@ jobs:
           severity-cutoff: low
       - name: Scan SBOM (print results to console)
         if: ${{ always() && contains(fromJSON('["success", "failure"]'), steps.scan.outcome) }}
-        uses: anchore/scan-action@64a33b277ea7a1215a3c142735a1091341939ff5 # v4.1.2
+        uses: anchore/scan-action@f2ba85e044c8f5e5014c9a539328a9c78d3bfa49 # v5.2.1
         with:
           output-format: table
           sbom: ${{ github.event.repository.name }}-sbom.spdx.json
@@ -52,6 +52,6 @@ jobs:
           if-no-files-found: error
       - name: Upload SBOM scan SARIF report to GitHub UI Security tab
         if: ${{ always() && github.event_name != 'pull_request' && contains(fromJSON('["success", "failure"]'), steps.scan.outcome) }}
-        uses: github/codeql-action/upload-sarif@f779452ac5af1c261dce0346a8f964149f49322b # v3.26.13
+        uses: github/codeql-action/upload-sarif@662472033e021d55d94146f66f6058822b0b39fd # v3.27.0
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
