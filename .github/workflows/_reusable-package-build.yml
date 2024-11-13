@@ -34,10 +34,10 @@ jobs:
       id-token: write
       attestations: write
     steps:
-      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
-      - uses: hynek/build-and-inspect-python-package@73aea398b9c8de9ea9e4464c6b13cb8b1f3d6294 # v2.9.0
+      - uses: hynek/build-and-inspect-python-package@f01e4d047aadcc0c054c95ec9900da3ec3fc7a0f # v2.10.0
         id: build-pkg
         with:
           attest-build-provenance-github: ${{ !github.event.pull_request.head.repo.fork && !contains(fromJSON('["dependabot[bot]", "renovate[bot]"]'), github.actor) }}
@@ -60,7 +60,7 @@ jobs:
           name: Packages
           path: dist
       - name: Set up Python
-        uses: actions/setup-python@39cd14951b08e74b54015e9e001cdefcf80e669f  # v5.1.1
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
         with:
           python-version: ${{ matrix.python-version }}
           check-latest: true
