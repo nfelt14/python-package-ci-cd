@@ -138,6 +138,11 @@
             "additionalBranchPrefix": "python-version/",
             "description": "Group together all Python (official) updates",
             "groupName": "python dependencies",
+            "matchManagers": [
+                "dockerfile",
+                "poetry",
+                "pip_requirements"
+            ],
             "matchPackageNames": [
                 "python"
             ],
