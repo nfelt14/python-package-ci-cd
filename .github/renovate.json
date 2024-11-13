@@ -147,7 +147,8 @@
                 "dockerfile",
                 "poetry"
             ],
-            "semanticCommitScope": "python-version"
+            "semanticCommitScope": "python-version",
+            "semanticCommitType": "chore"
         }
     ],
     "platformCommit": "enabled",
