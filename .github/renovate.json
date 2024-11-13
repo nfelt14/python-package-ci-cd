@@ -11,6 +11,28 @@
     ],
     "packageRules": [
         {
+            "additionalBranchPrefix": "python-version/",
+            "description": "Group together all Python (official) updates",
+            "groupName": "python dependencies",
+            "matchManagers": [
+                "dockerfile",
+                "poetry",
+                "pip_requirements"
+            ],
+            "matchPackageNames": [
+                "python"
+            ],
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch",
+                "rollback",
+                "bump",
+                "replacement"
+            ],
+            "semanticCommitScope": "python-version"
+        },
+        {
             "additionalBranchPrefix": "{{#if (equals manager 'github-actions')}}gh-actions{{else}}{{categories}}{{/if}}-deps/",
             "description": "Set the branch prefix and minimum release age for all updates",
             "matchPackageNames": [
@@ -133,28 +155,6 @@
             "matchPackageNames": [
                 "*"
             ]
-        },
-        {
-            "additionalBranchPrefix": "python-version/",
-            "description": "Group together all Python (official) updates",
-            "groupName": "python dependencies",
-            "matchManagers": [
-                "dockerfile",
-                "poetry",
-                "pip_requirements"
-            ],
-            "matchPackageNames": [
-                "python"
-            ],
-            "matchUpdateTypes": [
-                "major",
-                "minor",
-                "patch",
-                "rollback",
-                "bump",
-                "replacement"
-            ],
-            "semanticCommitScope": "python-version"
         }
     ],
     "platformCommit": "enabled",
