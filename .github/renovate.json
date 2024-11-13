@@ -11,12 +11,39 @@
     ],
     "packageRules": [
         {
-            "additionalBranchPrefix": "{{#if (equals manager 'github-actions')}}gh-actions{{else}}{{categories}}{{/if}}-deps/",
-            "description": "Set the branch prefix and minimum release age for all updates",
-            "matchPackageNames": [
-                "*"
+            "addLabels": [
+                "docker",
+                "dependencies"
             ],
-            "minimumReleaseAge": "5 days"
+            "commitMessageSuffix": " in all dependant actions",
+            "description": "Add docker and dependencies labels to Docker dependency updates",
+            "matchManagers": [
+                "dockerfile"
+            ],
+            "semanticCommitScope": "docker-deps"
+        },
+        {
+            "addLabels": [
+                "gh-actions",
+                "dependencies"
+            ],
+            "description": "Add gh-actions and dependencies labels to GitHub Action dependency updates",
+            "matchManagers": [
+                "github-actions"
+            ],
+            "semanticCommitScope": "gh-actions-deps"
+        },
+        {
+            "addLabels": [
+                "python",
+                "dependencies"
+            ],
+            "description": "Add python and dependencies labels to Python dependency updates",
+            "matchManagers": [
+                "poetry",
+                "pip_requirements"
+            ],
+            "semanticCommitScope": "python-deps"
         },
         {
             "additionalBranchPrefix": "",
