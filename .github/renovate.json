@@ -113,8 +113,21 @@
         {
             "description": "Group together all Python (official) updates",
             "groupName": "python dependencies",
+            "matchManagers": [
+                "dockerfile",
+                "poetry",
+                "pip_requirements"
+            ],
             "matchPackageNames": [
                 "python"
+            ],
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch",
+                "rollback",
+                "bump",
+                "replacement"
             ]
         },
         {
