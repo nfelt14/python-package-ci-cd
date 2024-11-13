@@ -16,11 +16,11 @@
             "commitMessageSuffix": " in all dependant actions",
             "description": "Group together all Python (official) version updates",
             "groupName": "python version",
+            "matchDepNames": [
+                "python"
+            ],
             "matchDepTypes": [
                 "*"
-            ],
-            "matchPackageNames": [
-                "python"
             ],
             "semanticCommitScope": "python-version"
         }
