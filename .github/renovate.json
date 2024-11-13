@@ -12,15 +12,15 @@
             ]
         },
         {
-            "additionalBranchPrefix": "python-version/",
+            "additionalBranchPrefix": "",
             "commitMessageSuffix": " in all dependant actions",
             "description": "Group together all Python (official) version updates",
-            "groupName": "python dependencies",
+            "groupName": "python version",
             "matchDepTypes": [
                 "*"
             ],
             "matchPackageNames": [
-                "*"
+                "python"
             ],
             "semanticCommitScope": "python-version"
         }
