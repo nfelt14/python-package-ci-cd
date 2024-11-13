@@ -30,14 +30,6 @@
             "matchPackageNames": [
                 "python"
             ],
-            "matchUpdateTypes": [
-                "major",
-                "minor",
-                "patch",
-                "rollback",
-                "bump",
-                "replacement"
-            ],
             "semanticCommitScope": "python-version"
         }
     ],
