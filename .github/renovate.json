@@ -22,6 +22,9 @@
             "commitMessageSuffix": " in all dependant actions",
             "description": "Group together all Python (official) version updates",
             "groupName": "python dependencies",
+            "matchDepTypes": [
+                "*"
+            ],
             "matchManagers": [
                 "dockerfile",
                 "poetry",
