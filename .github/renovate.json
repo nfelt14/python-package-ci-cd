@@ -111,6 +111,13 @@
             ]
         },
         {
+            "description": "Group together all Python (official) updates",
+            "groupName": "python dependencies",
+            "matchPackageNames": [
+                "python"
+            ]
+        },
+        {
             "additionalBranchPrefix": "{{#if (equals manager 'github-actions')}}gh-actions{{else}}{{categories}}{{/if}}-deps/",
             "automerge": false,
             "description": "Group together all python-semantic-release dependencies",
