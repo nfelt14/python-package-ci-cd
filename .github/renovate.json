@@ -19,13 +19,8 @@
             "matchDepTypes": [
                 "*"
             ],
-            "matchManagers": [
-                "dockerfile",
-                "poetry",
-                "pip_requirements"
-            ],
             "matchPackageNames": [
-                "python"
+                "python*"
             ],
             "semanticCommitScope": "python-version"
         }
