@@ -138,7 +138,7 @@
         },
         {
             "additionalBranchPrefix": "",
-            "commitMessageSuffix": "depType={{depType}}, displayTo={{displayTo}}, updateType={{updateType}}",
+            "commitMessageSuffix": "depType={{depType}}, displayTo={{displayTo}}, updateType={{updateType}}, depTypes={{depTypes}}",
             "description": "Group together all Python (official) version updates",
             "groupName": "python version",
             "matchDepNames": [
